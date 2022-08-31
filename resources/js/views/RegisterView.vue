@@ -8,6 +8,7 @@ import PrimaryButton from '../components/PrimaryButton.vue';
         <div class="p-10 bg-sky-800 flex flex-col gap-5 rounded">
             <FormInput type="email" title="Email" name="email" />
             <FormInput type="password" title="Password" name="password" />
+            <FormInput type="password" title="Confirm Password" name="confirm-password" />
             <PrimaryButton title="Register" />
         </div>
     </div>
