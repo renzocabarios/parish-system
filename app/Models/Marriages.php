@@ -21,5 +21,7 @@ class Marriages extends Model
         'issued_date',
     ];
 
-    protected $connection = 'mysql';
+    public function priest(){
+        return $this->belongsTo(Priest::class);
+    }
 }

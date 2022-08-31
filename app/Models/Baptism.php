@@ -24,5 +24,11 @@ class Baptism extends Model
         'purpose'
     ];
 
-    protected $connection = 'mysql';
+    public function priest(){
+        return $this->belongsTo(Priest::class);
+    }
+
+    public function confirmation(){
+        return $this->hasOne(Confirmation::class);
+    }
 }

@@ -17,5 +17,15 @@ class Priest extends Model
         'title',
     ];
 
-    protected $connection = 'mysql';
+    public function baptism(){
+        return $this->hasMany(Baptism::class);
+    }
+
+    public function confirmation(){
+        return $this->hasMany(Confirmation::class);
+    }
+
+    public function marriage(){
+        return $this->hasMany(Marriages::class);
+    }
 }

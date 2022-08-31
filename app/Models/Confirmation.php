@@ -25,5 +25,11 @@ class Confirmation extends Model
         'page'
     ];
 
-    protected $connection = 'mysql';
+    public function priest(){
+        return $this->belongsTo(Priest::class);
+    }
+
+    public function baptism(){
+        return $this->belongsTo(Baptism::class);
+    }
 }
