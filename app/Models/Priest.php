@@ -16,4 +16,6 @@ class Priest extends Model
         'last_name',
         'title',
     ];
+
+    protected $connection = 'mysql';
 }

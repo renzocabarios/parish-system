@@ -24,4 +24,6 @@ class Confirmation extends Model
         'number',
         'page'
     ];
+
+    protected $connection = 'mysql';
 }

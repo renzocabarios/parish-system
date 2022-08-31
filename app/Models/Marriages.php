@@ -20,4 +20,6 @@ class Marriages extends Model
         'marriage_license',
         'issued_date',
     ];
+
+    protected $connection = 'mysql';
 }

@@ -23,4 +23,6 @@ class Baptism extends Model
         'page',
         'purpose'
     ];
+
+    protected $connection = 'mysql';
 }
