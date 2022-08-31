@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('confirmations', function (Blueprint $table) {
             $table->id();
             $table->text('user_ids');
-            $table->unsignedInteger('priest_id');
+            $table->unsignedBigInteger('priest_id');
             $table->foreign('priest_id')->references('id')->on('priests');
-            $table->unsignedBigInteger('baptismal_id');
-            $table->foreign('baptismal_id')->references('id')->on('baptismals');
+            $table->unsignedBigInteger('baptism_id');
+            $table->foreign('baptism_id')->references('id')->on('baptisms');
             $table->text('church');
             $table->text('church_address');
             $table->date('confirmed_date');
