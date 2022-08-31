@@ -17,15 +17,15 @@ class Priest extends Model
         'title',
     ];
 
-    public function baptism(){
+    public function baptisms(){
         return $this->hasMany(Baptism::class);
     }
 
-    public function confirmation(){
+    public function confirmations(){
         return $this->hasMany(Confirmation::class);
     }
 
-    public function marriage(){
+    public function marriages(){
         return $this->hasMany(Marriages::class);
     }
 }
