@@ -1,7 +1,15 @@
-<script setup>
+<script>
 import FormInput from '../components/FormInput.vue';
 import PrimaryButton from '../components/PrimaryButton.vue';
 import Card from '../components/Card.vue';
+
+export default {
+    components: {
+        FormInput,
+        PrimaryButton,
+        Card,
+    }
+}
 </script>
 
 <template>

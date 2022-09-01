@@ -2,9 +2,7 @@
 import SideBarLink from './SideBarLink.vue';
 export default {
     data() {
-        return {
-            links: [{ title: "Home" }, { title: "Certificate" }, { title: "Marriage" }, { title: "Users" }]
-        };
+        return { links: [{ title: "Home" }, { title: "Certificate" }, { title: "Marriage" }, { title: "Users" }] }
     },
     components: { SideBarLink }
 }
