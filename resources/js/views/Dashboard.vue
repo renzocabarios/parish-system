@@ -1,9 +1,11 @@
 <script>
 import SideBar from '../components/SideBar.vue';
+import DataTable from '../components/DataTable.vue';
 
 export default {
     components: {
-        SideBar
+        SideBar,
+        DataTable
     }
 }
 </script>
@@ -11,8 +13,9 @@ export default {
 <template>
     <div class="h-full w-full main text-white bg-gray-500">
         <SideBar />
-        <div class="">
+        <div class="p-3">
             <!-- Put the body here -->
+            <DataTable />
         </div>
     </div>
 </template>
