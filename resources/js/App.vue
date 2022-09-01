@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <h1 class="h-screen w-screen bg-gray-900">
+    <h1 class="h-screen w-screen bg-gray-500">
         <RouterView />
     </h1>
 </template>

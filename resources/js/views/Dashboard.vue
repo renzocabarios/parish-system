@@ -9,9 +9,9 @@ export default {
 </script>
 
 <template>
-    <div class="h-full w-full main text-white">
+    <div class="h-full w-full main text-white bg-gray-500">
         <SideBar />
-        <div class="bg-white">
+        <div class="">
             <!-- Put the body here -->
         </div>
     </div>
