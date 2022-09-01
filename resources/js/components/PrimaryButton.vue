@@ -7,5 +7,7 @@ export default {
 </script>
 
 <template>
-    <button class="px-5 py-2 bg-sky-900 rounded">{{ title ?? "Empty Title" }}</button>
+    <button
+        class="shadow-md rounded-md px-7 py-3 bg-gray-900 hover:bg-black transition-all text-white font-bold text-lg">{{
+        title ?? "Empty Title" }}</button>
 </template>
