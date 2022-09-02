@@ -65,4 +65,7 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+
 }
