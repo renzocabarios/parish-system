@@ -56,4 +56,26 @@ class UsersController extends Controller
         if ($user) return response()->json(['status' => 'success', 'message' => 'Successfully created a user.']);
         return response()->json(['status' => 'failed', 'message' => 'Failed to create a user.']);
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'first_name' => 'required|string',
+            'middle_name' => 'sometimes|string',
+            'last_name' => 'required|string',
+            'date_of_birth' => 'required|date',
+            'fathers_name' => 'required| string',
+            'fathers_citizenship' => 'required | string',
+            'mothers_name' => 'required |string',
+            'mothers_citizenship' => 'required|string',
+            'address' => 'required | string',
+        ]);
+
+        $user = User::find($id);
+        if (!$user) return response()->json(['status' => 'failed', 'message' => 'Failed to update a user.']);
+
+        $user->update([$request->all()]);
+        return response()->json(['status' => 'success', 'message' => 'Successfully updated a user.']);
+    }
+
 }
