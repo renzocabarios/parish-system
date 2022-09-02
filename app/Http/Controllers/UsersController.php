@@ -14,4 +14,10 @@ class UsersController extends Controller
         return User::all();
     }
 
+    public function show($id)
+    {
+        $user = User::find($id);
+        if ($user)  return response()->json(['status' => 'success', 'user' => $user]);
+        return response()->json(['status' => 'failed', 'message' => 'Cannot find user.']);
+    }
 }
