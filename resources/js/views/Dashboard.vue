@@ -1,12 +1,21 @@
-<script setup>
+<script>
 import SideBar from '../components/SideBar.vue';
+import DataTable from '../components/DataTable.vue';
+
+export default {
+    components: {
+        SideBar,
+        DataTable
+    }
+}
 </script>
 
 <template>
-    <div class="h-full w-full main text-white">
+    <div class="h-full w-full main text-white bg-gray-500">
         <SideBar />
-        <div class="bg-white">
+        <div class="p-3">
             <!-- Put the body here -->
+            <DataTable />
         </div>
     </div>
 </template>
