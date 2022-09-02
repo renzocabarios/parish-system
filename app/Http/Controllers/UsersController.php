@@ -78,4 +78,11 @@ class UsersController extends Controller
         return response()->json(['status' => 'success', 'message' => 'Successfully updated a user.']);
     }
 
+    public function delete($id)
+    {
+        $user = User::find($id);
+        if (!$user) return response()->json(['status' => 'failed', 'message' => 'Failed to delete a user.']);
+        $user->delete();
+        return response()->json(['status' => 'success', 'message' => 'Successfully deleted a user.']);
+    }
 }
