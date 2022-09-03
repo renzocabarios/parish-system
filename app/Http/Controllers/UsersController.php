@@ -9,6 +9,26 @@ use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
+    public function validateRule($option){
+
+        $arrayObj =  ['email' => 'required|email',
+        'password' => 'required|string',
+        'first_name' => 'required|string',
+        'middle_name' => 'sometimes|string',
+        'last_name' => 'required|string',
+        'date_of_birth' => 'required|date',
+        'fathers_name' => 'required| string',
+        'fathers_citizenship' => 'required | string',
+        'mothers_name' => 'required |string',
+        'mothers_citizenship' => 'required|string',
+        'address' => 'required | string'];
+
+        if($option) return $arrayObj;
+        return array_slice($option, 2);
+    }
+
+    
+
     public function index()
     {
         return User::all();
@@ -23,19 +43,7 @@ class UsersController extends Controller
 
     public function create(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email|unique',
-            'password' => 'required|string',
-            'first_name' => 'required|string',
-            'middle_name' => 'sometimes|string',
-            'last_name' => 'required|string',
-            'date_of_birth' => 'required|date',
-            'fathers_name' => 'required| string',
-            'fathers_citizenship' => 'required | string',
-            'mothers_name' => 'required |string',
-            'mothers_citizenship' => 'required|string',
-            'address' => 'required | string',
-        ]);
+        $request->validate($this->validateRule("create"));
 
         $user = User::create([
             'id' => Str::uuid(),
@@ -59,17 +67,7 @@ class UsersController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'first_name' => 'required|string',
-            'middle_name' => 'sometimes|string',
-            'last_name' => 'required|string',
-            'date_of_birth' => 'required|date',
-            'fathers_name' => 'required| string',
-            'fathers_citizenship' => 'required | string',
-            'mothers_name' => 'required |string',
-            'mothers_citizenship' => 'required|string',
-            'address' => 'required | string',
-        ]);
+        $request->validate($this->validateRule('update'));
 
         $user = User::find($id);
         if (!$user) return response()->json(['status' => 'failed', 'message' => 'Failed to update a user.']);
