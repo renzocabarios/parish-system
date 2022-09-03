@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function validateRule($option){
 
-        $arrayObj =  ['email' => 'required|email|unique',
+        $arrayObj =  ['email' => 'required|email',
         'password' => 'required|string',
         'first_name' => 'required|string',
         'middle_name' => 'sometimes|string',
